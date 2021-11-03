@@ -1,4 +1,3 @@
-import { useReducer } from "react";
 import {
   UPDATE_PRODUCTS,
   ADD_TO_CART,
@@ -19,9 +18,7 @@ const initialState = {
   currentCategory: "",
 };
 
-// TODO: To get a better understand of how a reducer works - add comments to the various actions in the reducer
-export default function reducer = (state = initialState, action) => {
-
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_PRODUCTS:
       return {
@@ -42,7 +39,7 @@ export default function reducer = (state = initialState, action) => {
         cart: [...state.cart, ...action.products],
       };
 
-      case UPDATE_CART_QUANTITY:
+    case UPDATE_CART_QUANTITY:
       return {
         ...state,
         cartOpen: true,
@@ -93,5 +90,4 @@ export default function reducer = (state = initialState, action) => {
     default:
       return state;
   }
-};
-
+}
